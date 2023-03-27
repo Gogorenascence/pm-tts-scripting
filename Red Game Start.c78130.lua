@@ -1,14 +1,5 @@
 main_deck_zone = getObjectFromGUID('acde45')
-main_discard_zone = getObjectFromGUID('0785ad')
 pluck_deck_zone = getObjectFromGUID('82dbf6')
-pluck_discard_zone = getObjectFromGUID('c27abd')
-
-hand_zone = getObjectFromGUID('61206b')
-ownership = getObjectFromGUID('335793')
-
-main_play_zone = getObjectFromGUID('ee53ab')
-pluck_play_zone = getObjectFromGUID('2c4ec3')
-
 
 function getRedDeck()
     red_deck = main_deck_zone.getObjects()
@@ -49,5 +40,6 @@ function redSetUp()
     if getRedPluckDeck() != nil then
         getRedPluckDeck().randomize()
         getRedPluckDeck().deal(1, "Red", 2)
+        self.destruct()
     end
 end

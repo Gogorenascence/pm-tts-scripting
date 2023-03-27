@@ -76,6 +76,9 @@ end
 function discardPlayZones()
     blue_discard_pos = main_discard_zone.getPosition()
     for _, item in ipairs(cards) do
+        if item.is_face_down == true then
+            item.flip()
+        end
         if item.getLock() == false then
             item.setPositionSmooth(blue_discard_pos)
         end

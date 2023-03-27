@@ -1,14 +1,5 @@
 main_deck_zone = getObjectFromGUID('705d27')
-main_discard_zone = getObjectFromGUID('4b031a')
 pluck_deck_zone = getObjectFromGUID('2b3182')
-pluck_discard_zone = getObjectFromGUID('577c4b')
-
-hand_zone = getObjectFromGUID('18e4c7')
-ownership = getObjectFromGUID('b77cce')
-
-main_play_zone = getObjectFromGUID('489639')
-pluck_play_zone = getObjectFromGUID('8f1c9c')
-
 
 function getGreenDeck()
     green_deck = main_deck_zone.getObjects()
@@ -49,5 +40,6 @@ function greenSetUp()
     if getGreenPluckDeck() != nil then
         getGreenPluckDeck().randomize()
         getGreenPluckDeck().deal(1, "Green", 2)
+        self.destruct()
     end
 end

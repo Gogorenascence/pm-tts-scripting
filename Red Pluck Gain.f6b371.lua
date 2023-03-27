@@ -17,9 +17,9 @@ end
 
 function drawPluck()
     if getPluckDeck() != nil then
-        getPluckDeck().randomize()
         getPluckDeck().deal(1, "Red", 2)
         print('Good Pluck!')
+    else
+        print("It's not yet the time!")
     end
-    print("It's not yet the time!")
 end

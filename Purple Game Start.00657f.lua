@@ -1,14 +1,5 @@
 main_deck_zone = getObjectFromGUID('89e6b6')
-main_discard_zone = getObjectFromGUID('1f5f52')
 pluck_deck_zone = getObjectFromGUID('4071c3')
-pluck_discard_zone = getObjectFromGUID('568462')
-
-hand_zone = getObjectFromGUID('fa3103')
-ownership = getObjectFromGUID('74ac2e')
-
-main_play_zone = getObjectFromGUID('1f436f')
-pluck_play_zone = getObjectFromGUID('f57fdd')
-
 
 function getPurpleDeck()
     purple_deck = main_deck_zone.getObjects()
@@ -49,5 +40,6 @@ function purpleSetUp()
     if getPurplePluckDeck() != nil then
         getPurplePluckDeck().randomize()
         getPurplePluckDeck().deal(1, "Purple", 2)
+        self.destruct()
     end
 end
